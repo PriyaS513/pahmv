@@ -1,0 +1,46 @@
+#MarkAttendance {
+  height: 100vh;
+  padding: 20px;
+}
+
+
+
+.attendence {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 0px;
+  padding: 10px;
+  top: 0px;
+
+}
+
+.scan,
+.webcam {
+  width: 48%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.scan {
+  background-color: #f9f9f9;
+}
+
+.webcam {
+  background-color: #f9f9f9;
+}
+
+@media (max-width: 768px) {
+  .attendence {
+    flex-direction: column;
+  }
+
+  .scan,
+  .webcam {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,238 @@
+/* General Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Login Page Container */
+.login-page {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden; /* Ensure no scrollbars are shown */
+}
+
+/* Background Image */
+.background-image {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)); /* Adjust the gradient as needed */ 
+  object-fit: cover;
+  position: fixed; /* Make the image fixed to the viewport */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensure the image is behind other content */
+}
+
+/* Container Box */
+.box.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.9); 
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+  z-index: 1;
+  margin-top: 150px;
+  transition: all 0.3s ease;
+}
+
+/* Login Left & Right */
+.login-left, .login-right {
+  flex: 1;
+  padding: 20px;
+}
+
+.login-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center horizontally */
+}
+
+.stud {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center; /* Center horizontally */
+}
+
+.stud-1 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.underline {
+  width: 90%;
+  height: 2px;
+  background: #000;
+  margin-bottom: 20px;
+}
+
+/* Input Box */
+.input_box {
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+}
+
+.input_box img {
+  margin-right: 10px;
+}
+
+.input_box input {
+  width: calc(100% - 30px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input_box span {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+/* Submit Container */
+.submit-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.submit1 {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2f61ac;
+  color: #fff;
+  cursor: pointer;
+  width: 60%;
+  margin-top: 5px;
+}
+
+.submit {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2f61ac;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+
+.submit.gray {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
+
+.submit:hover {
+  background-color: #1e4a8c;
+}
+
+/* Forgot Password */
+.forgot-password {
+  padding-left: 62px;
+  margin-top: 27px;
+  color: #797979;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.forgot-password span {
+  color: #2f61ac;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .box.container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+    margin-top: 80px;
+    
+  }
+
+  .login-left {
+    width: 100%;
+    padding: 10px;
+    
+  }
+
+  .login-right{
+    display: none;
+    
+  }
+  .input_box {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .submit-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .submit1,
+  .submit {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .forgot-password {
+    padding-left: 0;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stud {
+    font-size: 1.5rem;
+  }
+
+  .stud-1 {
+    font-size: 1rem;
+  }
+
+  .underline {
+    width: 60%;
+  }
+
+  .submit1,
+  .submit {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+.toast-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.toast {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.toast-success {
+  background-color: #4CAF50;
+}
+
+.toast-error {
+  background-color: #f44336;
+}

@@ -1,0 +1,39 @@
+.student-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #f8f9fa;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    flex-wrap: nowrap;
+    height: 70px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adjust the shadow values as needed */
+  }
+  
+  .student-photo {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: end;
+    padding: 5px;
+  }
+  
+  .student-details {
+    display: flex;
+    gap: 10px; /* Gap between name, reg no, and class */
+  }
+  
+  .student-name {
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+    color: black; /* Example text color */
+  }
+  
+  .student-reg-no {
+    margin: 0;
+    font-size: 18px;
+    color: #555; /* Example text color */
+  }

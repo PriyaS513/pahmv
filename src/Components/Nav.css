@@ -1,0 +1,124 @@
+/* Base styles for the navigation bar */
+nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1050; /* Set a higher z-index for the navbar */
+  height: 75px;
+  width: 100%;
+  background-color: transparent;
+  color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Navbar logo */
+.logo {
+  width: 75px;
+  height: auto;
+  padding: 2px;
+}
+
+/* Styles for navigation links */
+.navbar-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nav-item {
+  margin: 5px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #e4e4e4;
+}
+
+.nav-link {
+  color: #fff !important;
+}
+
+/* Overlay for the sidebar */
+.page-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1045; /* Set a higher z-index for the overlay */
+  display: none;
+}
+
+.page-overlay.show {
+  display: block;
+}
+
+.navbar-open {
+  background-color: #2f61ac !important;
+}
+
+/* Sidebar styles for mobile view */
+.navbar-toggler {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  nav {
+    height: 60px; /* Adjust height for mobile */
+  }
+  .logo {
+    width: 60px; /* Smaller width for mobile */
+    height: 60px; /* Maintain aspect ratio */
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-collapse {
+    transition: transform 0.3s ease-in-out;
+    background-color: #2f61ac;
+    color: white;
+    position: fixed;
+    top: 75px;
+    left: 0;
+    height: calc(100% - 75px);
+    width: 100%;
+    z-index: 1050; /* Ensure navbar-collapse has a high z-index */
+    transform: translateX(100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+  }
+
+  .navbar-collapse.show {
+    transform: translateX(0);
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-item {
+    margin: 20px 0;
+  }
+
+  body.navbar-open {
+    overflow: hidden; /* Prevents scrolling */
+  }
+}
+
+/* Remove the horizontal line below each button when clicked */
+.nav-item hr {
+  display: none;
+}

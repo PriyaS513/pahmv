@@ -1,0 +1,87 @@
+/* StudentList.css */
+
+/* #StudentList {
+  margin: 50px;
+  height: 70vh;
+  background-color: #f5f5f5;
+} */
+
+.MuiPaper-root {
+  width: 90%;
+  margin: auto;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.MuiTableContainer-root {
+  max-height: calc(100vh - 150px);
+  overflow-y: hidden; /* Prevents vertical scrollbar */
+}
+
+.MuiTableCell-head {
+  background-color: #3f51b5; /* Blue background color */
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left; /* Align text to the left */
+}
+
+.MuiTableCell-body {
+  font-size: 14px;
+  color: #333333;
+  text-align: left; /* Align text to the left */
+}
+
+.MuiCheckbox-root {
+  color: #3f51b5;
+}
+
+.MuiButton-root {
+  margin: 0 5px;
+}
+
+.MuiButton-root:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.MuiTablePagination-root {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.MuiTableRow-root:hover {
+  background-color: #e0f7fa;
+  cursor: pointer;
+}
+
+.MuiTableRow-root.Mui-selected {
+  background-color: #bbdefb !important;
+}
+
+.css-15wwp11-MuiTableHead-root {
+  background-color: lightblue;
+}
+@media (max-width: 768px) {
+  #StudentList {
+    width: 100%;
+    margin: 0 auto; /* Center the container */
+    height: auto;
+  }
+
+  .MuiPaper-root {
+    width: 100%;
+    margin: 0 auto; /* Center the table */
+    border-radius: 0;
+  }
+
+  .MuiTableContainer-root {
+    max-height: none; /* Remove fixed height */
+    overflow-y: auto; /* Allow vertical scrolling */
+  }
+
+  .MuiTablePagination-root {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,147 @@
+#about-section {
+  /* margin: 50px; */
+  height: 100%;
+  position: static;
+  background-size: cover;
+}
+#about-section p {
+  padding: 0;
+}
+.about-cl-1 img {
+  width: 80%;
+  border-radius: 15px;
+  height: 90%;
+  flex-basis: 50%;
+}
+
+.about-cl-2 {
+  flex-basis: 50%;
+}
+
+.tab-title {
+  display: flex;
+  margin: 20px 0 40px;
+  
+}
+
+.tab-links {
+  margin-right: 50px;
+  font-size: 23px; /* */
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+
+.tab-links::after {
+  content: '';
+  width: 0;
+  height: 4px;
+  background: #1262be;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+  width: 70%;
+}
+
+.about {
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.about-left {
+  flex-basis: 50%;
+  position: relative;
+}
+
+.about-right {
+  flex-basis: 56%;
+}
+
+.aboutimg {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.play-icon {
+  width: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.about h3 {
+  font-weight: 600;
+  font-size: 16px;
+  color: #212ea0;
+}
+
+.about p {
+  color: #676767;
+  /* margin-bottom: 15px; */
+  font-size: 20px;
+}
+
+.tab-contents ul li {
+  list-style: none;
+  /* margin: 10px 0; */
+  font-size: 25px;
+}
+/* .tab-contents ul p{
+  padding-left: 0rem;
+} */
+
+.tab-contents ul li span {
+  color: #212ea0;
+  font-size: 35px; /* */
+}
+
+.tab-contents {
+  display: none;
+}
+
+.tab-contents.active-tab {
+  display: block;
+}
+
+@media (max-width: 1200px) {
+  .about {
+    flex-direction: column; /* Stack elements vertically on larger screens */
+  }
+  .about-left {
+    width: 100%; /* Make the image take up the full width */
+  }
+  .about-right {
+    width: 100%; /* Make the text take up the full width */
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+  }
+  .tab-title {
+    flex-direction: column; /* Display tab links vertically on smaller screens */
+  }
+  .tab-links {
+    margin-bottom: 20px; /* Add some space between tab links */
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutimg {
+    width: 100%; /* Make the image take up the full width on very small screens */
+    height: auto; /* Maintain aspect ratio */
+  }
+  .tab-links {
+    font-size: 18px; /* Reduce font size on very small screens */
+  }
+}

@@ -1,0 +1,94 @@
+/* Form Container Styles */
+.form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: auto;
+}
+
+/* Allowed Types Text Styles */
+.allowed-types {
+    margin-top: 5px;
+}
+
+/* Image Preview Styles */
+.image-preview {
+    margin-top: 20px;
+}
+
+.preview-image {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    border-radius: 10%;
+}
+
+/* Button Styles */
+.upload-button,
+.reset-button,
+.submit-button {
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    width: 100%;
+}
+
+/* Upload Button Styles */
+.upload-button {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    margin-bottom: 10px;
+}
+
+.upload-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Reset Button Styles */
+.reset-button {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ced4da;
+    margin-top: 10px;
+}
+
+.reset-button:hover {
+    background-color: #e2e6ea;
+    transform: translateY(-2px);
+}
+
+/* Submit Button Styles */
+.submit-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    .upload-button,
+    .reset-button,
+    .submit-button {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .preview-image {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,129 @@
+/* body {
+    background-image: url('images/background1.jpeg');
+*/
+/* Replace 'images.jpeg' with your image URL */
+/* background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+*/
+
+#notice_section {
+  padding: 35px;
+  /* background-image: url("../Images/notice1.jpg"); */
+  /* height: 100vh; */
+  /* background-color: #f9f9f9; */
+
+}
+
+
+/* 
+.img{
+  margin-top: 40px; Added margin from top
+  background-position: center; Ensure the image is centered
+  background-repeat: no-repeat; Ensure the image does not repeat
+  background-size: cover; Ensure the image covers the entire area
+
+} */
+/* 
+.page-content {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+} */
+
+
+.text-center {
+  text-align: center !important;
+  font-size: 50px;
+  color: #2f61ac;
+  font-weight: bold;
+}
+
+
+/* .card {
+  height: auto;
+  position: relative; 
+  background-color: rgba(32, 28, 28, 0.9);
+  width: auto;
+  margin-bottom: 18px;
+  padding: 27px;
+  border-radius: 10px;
+  border: 2px solid #351507; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+} */
+
+/*1...............*/
+
+
+
+
+/*1...............*/
+.card-body-notice {
+  flex: 1 1 auto;
+  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+  /* color: var(--bs-card-color); */
+  height: fit-content;
+  background: border-box;
+  border-radius: 16px;
+}
+
+
+.note-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2f61ac;
+}
+
+
+
+.col-md-4 {
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 10px;
+}
+
+.text-muted {
+  --bs-text-opacity: 1;
+  color: var(--bs-secondary-color) !important;
+  font-size: 22px;
+  margin: 3px;
+  padding: -8px;
+}
+
+
+#note-full-container {
+  width: 100%;
+  padding: 20px;
+}
+
+/* .card {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 27px;
+  height: fit-content;
+} */
+
+/* Media query for screens smaller than 768px (mobile devices) */
+@media (max-width: 767.98px) {
+  .col-md-4 {
+      width: 100%;
+  }
+
+  .note-title {
+      font-size: 20px;
+  }
+
+  .text-muted {
+      font-size: 18px;
+  }
+
+  .Heading {
+      font-size: 50px;
+  }
+}
