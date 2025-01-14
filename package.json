@@ -69,6 +69,6 @@
   "description": "",
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^2.9.15"
+    "vite": "^6.0.7"
   }
 }
