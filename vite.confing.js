@@ -22,8 +22,6 @@ export default defineConfig({
   },
   build: {
     outDir: 'build',
-    rollupOptions: {
-      external: ['jquery'], // Mark jQuery as external
-    },
+    
   },
 });

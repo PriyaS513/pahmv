@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './MarkAttendence.css';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
-import img from '../Images/student1.jpeg';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Teachnav from "./teachernav.jsx";
-import { QRCodeScanner } from 'qr-code-scanner';
+import QrScanner from 'react-qr-scanner';
 
 const isDevelopment = import.meta.env.MODE === 'development';
 const baseUrl = isDevelopment ? import.meta.env.VITE_API_BASE_URL_LOCAL : import.meta.env.VITE_API_BASE_URL_DEPLOY;
@@ -14,6 +13,7 @@ const baseUrl = isDevelopment ? import.meta.env.VITE_API_BASE_URL_LOCAL : import
 function MarkAttendance() {
   const navigate = useNavigate();
   const [showDropdown, setShowDropdown] = useState(false);
+  const [webCamResult, setWebCamResult] = useState("");
 
   const handlePhotoClick = () => {
     setShowDropdown(!showDropdown);
@@ -40,17 +40,6 @@ function MarkAttendance() {
     }
   };
 
-  const [result, setResult] = useState("");
-  const [webCamResult, setWebCamResult] = useState();
-
-  const readCode = (e) => {
-    const file = e.target.files[0];
-    if (!file) {
-      return;
-    }
-    // Use a library like qr-code-reader to read the QR code
-  };
-
   const webcamScan = (result) => {
     if (result) {
       const [mobile, regId] = result.split("-");
@@ -69,22 +58,16 @@ function MarkAttendance() {
   };
 
   const sendSMS = (mobile, regId) => {
-    console.log(mobile);
-    console.log(regId);
     axios.post(`${baseUrl}/Teachers/sendsms/`, {
       mobile_number: mobile,
       regid: regId,
     })
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  };
-
-  const isMobileDevice = () => {
-    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error => {
+      console.error(error);
+    });
   };
 
   return (
@@ -100,18 +83,12 @@ function MarkAttendance() {
       <div className="attendence">
         <div className='webcam'>
           <div>
-            <div>
-              <h3>Webcam</h3>
-            </div>
-            <div>
-              <QRCodeScanner
-                onScan={(result) => webcamScan(result.data)}
-                onError={() => console.log('Error occurred while scanning QR code')}
-              />
-            </div>
-            <div>
-              <h6>Mob No : {webCamResult}</h6>
-            </div>
+            <h3>Webcam</h3>
+            <QrScanner
+              onScan={webcamScan}
+              onError={() => console.log('Error occurred while scanning QR code')}
+            />
+            <h6>Mob No: {webCamResult}</h6>
           </div>
         </div>
       </div>
