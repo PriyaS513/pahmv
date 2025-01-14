@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './MarkAttendence.css';
 import axios from "axios";
-import QrReader from 'react-qr-reader';
-import QrScanner from "qr-scanner";
 import { useNavigate } from 'react-router-dom';
 import img from '../Images/student1.jpeg';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Teachnav from "./teachernav.jsx";
+import { QRCodeScanner } from 'react-qr-code-scanner';
 
 const isDevelopment=import.meta.env.MODE==='development'
-  const baseUrl=isDevelopment?import.meta.env.VITE_API_BASE_URL_LOCAL:import.meta.env.VITE_API_BASE_URL_DEPLOY
-
+const baseUrl=isDevelopment?import.meta.env.VITE_API_BASE_URL_LOCAL:import.meta.env.VITE_API_BASE_URL_DEPLOY
 
 function MarkAttendance() {
   const navigate = useNavigate();
@@ -43,23 +41,14 @@ function MarkAttendance() {
   };
 
   const [result, setResult] = useState("");
+  const [webCamResult, setWebCamResult] = useState();
 
   const readCode = (e) => {
     const file = e.target.files[0];
     if (!file) {
       return;
     }
-    QrScanner.scanImage(file, { returnDetailedScanResult: true })
-      .then(result => setResult(result.data))
-      .catch(e => console.log(e));
-  };
-
-  const [webCamResult, setWebCamResult] = useState();
-
-  const webcamError = (error) => {
-    if (error) {
-      console.log(error);
-    }
+    // Use a library like qr-code-reader to read the QR code
   };
 
   const webcamScan = (result) => {
@@ -78,10 +67,10 @@ function MarkAttendance() {
       });
     }
   };
-   
+
   const sendSMS = (mobile, regId) => {
     console.log(mobile);
-     console.log(regId);
+    console.log(regId);
     axios.post(`${baseUrl}/Teachers/sendsms/`, {
       mobile_number: mobile,
       regid: regId,
@@ -101,9 +90,9 @@ function MarkAttendance() {
   return (
     <div id="MarkAttendance" onClick={handleOutsideClick}>
       <div id="teachnav">
-    <Teachnav/>
-    </div>
-           <div className="home-button-container">
+        <Teachnav/>
+      </div>
+      <div className="home-button-container">
         <button className="home-button" onClick={() => navigate('/Teacherprofile/Attendancepage')}>
           <i className="fa fa-arrow-left" aria-hidden="true"></i> Back
         </button>
@@ -115,12 +104,9 @@ function MarkAttendance() {
               <h3>Webcam</h3>
             </div>
             <div>
-              <QrReader
-                delay={300}
-                onError={webcamError}
+              <QRCodeScanner
                 onScan={webcamScan}
-                legacyMode={false}
-                facingMode={isMobileDevice() ? "environment" : "user"}
+                onError={() => console.log('Error occurred while scanning QR code')}
               />
             </div>
             <div>
