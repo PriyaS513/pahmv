@@ -6,10 +6,10 @@ import img from '../Images/student1.jpeg';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Teachnav from "./teachernav.jsx";
-import { QRCodeScanner } from 'react-qr-code-scanner';
+import { QRCodeScanner } from 'qr-code-scanner';
 
-const isDevelopment=import.meta.env.MODE==='development'
-const baseUrl=isDevelopment?import.meta.env.VITE_API_BASE_URL_LOCAL:import.meta.env.VITE_API_BASE_URL_DEPLOY
+const isDevelopment = import.meta.env.MODE === 'development';
+const baseUrl = isDevelopment ? import.meta.env.VITE_API_BASE_URL_LOCAL : import.meta.env.VITE_API_BASE_URL_DEPLOY;
 
 function MarkAttendance() {
   const navigate = useNavigate();
@@ -75,12 +75,12 @@ function MarkAttendance() {
       mobile_number: mobile,
       regid: regId,
     })
-    .then(response => {
-      console.log(response);
-    })
-    .catch(error => {
-      console.error(error);
-    });
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   };
 
   const isMobileDevice = () => {
@@ -90,7 +90,7 @@ function MarkAttendance() {
   return (
     <div id="MarkAttendance" onClick={handleOutsideClick}>
       <div id="teachnav">
-        <Teachnav/>
+        <Teachnav />
       </div>
       <div className="home-button-container">
         <button className="home-button" onClick={() => navigate('/Teacherprofile/Attendancepage')}>
@@ -105,7 +105,7 @@ function MarkAttendance() {
             </div>
             <div>
               <QRCodeScanner
-                onScan={webcamScan}
+                onScan={(result) => webcamScan(result.data)}
                 onError={() => console.log('Error occurred while scanning QR code')}
               />
             </div>

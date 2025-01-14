@@ -22,8 +22,5 @@ export default defineConfig({
   },
   build: {
     outDir: 'build',
-    rollupOptions: {
-      external: ['react-qr-code-scanner']
-    }
   },
 });
