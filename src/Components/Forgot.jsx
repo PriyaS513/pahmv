@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import './Student.css';
 import img from "../Images/carousel3.jpg";
 import Lottie from "lottie-react";
-import text from "../assets/forgot.json";
+import text from "../asset/forgot.json";
 {/* Import images import user_icon from "../images/user_icon.png"
 import email_icon from "../images/email_icon.png"
 import password_icon from "../images/password_icon.png"

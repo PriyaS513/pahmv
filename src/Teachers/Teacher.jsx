@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import '../Components/Student.css';
 import Lottie from "lottie-react";
-import text from "../assets/login.json";
+import text from "../asset/login.json";
 import img from "../Images/carousel3.jpg";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
